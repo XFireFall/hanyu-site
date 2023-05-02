@@ -1,0 +1,70 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Статистика по словам
+{% endblock %}
+
+{% block page-lead %}
+Фразой считается набор из нескольких слов. <br>
+Большинство слов к китайском языке состоят из двух иероглифов.
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="stats">
+    <div>
+        <h3 class="py-2">Количество терминов</h3>
+    </div>
+    
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>{{ terms_all }}</h4>
+            <p class="text-muted">всего</p>
+        </div>
+        <div class="col-md-4">
+            <h4>{{ terms_own }}</h4>
+            <p class="text-muted">изначально бывших в базе</p>
+        </div>
+        <div class="col-md-4">
+            <h4>{{ terms_added }}</h4>
+            <p class="text-muted">добавленных через <a href="/add-term">форму добавления термина</a></p>
+        </div>
+    </div>
+    
+    <div>
+        <h3 class="py-2">Описания</h3>
+    </div>
+    
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h4>{{ words }}</h4>
+            <p class="text-muted">всего слов</p>
+        </div>
+        <div class="col-md-4">
+            <h4>{{ phrases }}</h4>
+            <p class="text-muted">всего фраз</p>
+        </div>
+    </div>
+    
+    <div class="row text-center table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col" class="py-3">Длина слова</th>
+              <th scope="col" class="py-3">Количество слов</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for len, count in words_by_len %}
+            <tr>
+                <td class="py-3">{{ len }}</td>
+                <td class="py-3">{{ count }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+    
+    <p>Слов без примера употребления: {{ missing_example }} из {{ terms_all }}</p>
+</div>
+{% endblock %}
+

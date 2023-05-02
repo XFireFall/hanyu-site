@@ -1,0 +1,60 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Добавить слово
+{% endblock %}
+
+{% block page-lead %}
+Для изучения китайского слова необходимо 3 знания - <span class="fst-italic">иероглифическая запись</span>, транскрипция (<span class="fst-italic">пиньинь</span>) и <span class="fst-italic">перевод</span>. <br>
+Опционально можно добавить <span class="fst-italic">пример употребления</span> в некотором предложении.
+{% endblock %}
+
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="term-form">
+    <form method="post">
+        
+        <div class="row px-5 py-2">
+            <h3>Введите знания о новом слове</h3>
+        </div>
+        
+        <div class="row px-5 py-2"> <!-- Слово | Перевод -->
+            <div class="col-md-4">
+                <label for="word">Слово</label>
+                <input type="text" class="form-control input-lg"
+                    name="word" id="word"
+                    placeholder="图书馆" value required
+                >
+            </div>
+            
+            <div class="col-md-4">
+                <label for="pinyin">Пиньинь</label>
+                <input type="text" class="form-control input-lg"
+                    name="pinyin" id="pinyin"
+                    placeholder="tUSHUguan" value required
+                >
+            </div>
+            
+            <div class="col-md-4">
+                <label for="translation">Перевод</label>
+                <input type="text" class="form-control input-lg"
+                    name="translation" id="translation"
+                    placeholder="библиотека" value required
+                >
+            </div>
+            
+            <div class="col-md-8">
+                <label for="example">Пример употребления</label>
+                <textarea type="text" class="form-control input-lg"
+                    name="example" id="example"
+                    aria-describedby="example_note" rows="3"
+                ></textarea>
+                <div id="example_note" class="form-text">Постарайтесь уложиться в одно, максимум два предложения</div>
+            </div>
+        </div>
+        <div class="row px-5 py-2">
+            <button type="submit" class="btn btn-primary" formaction="/send-term">Отправить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

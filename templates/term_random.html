@@ -1,0 +1,21 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Случайное слово
+{% endblock %}
+
+{% block page-lead %}
+Случайное слово извлекается из файла со словарем и отображается здесь.
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="terms-table">
+    <div class="row px-5 py-2">Слово: {{ word }}</div>
+    <div class="row px-5 py-2">Пиньинь: {{ pinyin }}</div>
+    <div class="row px-5 py-2">Перевод: {{ translation }}</div>
+    <div class="row px-5 py-2">Пример: {{ example }}</div>
+    
+    <a href="/random" class="btn btn-primary">Следующее слово</a>
+    <a href="/" class="btn btn-primary">На главную</a>
+</div>
+{% endblock %}

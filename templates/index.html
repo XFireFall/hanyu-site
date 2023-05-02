@@ -1,0 +1,89 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Слова китайского языка
+{% endblock %}
+
+{% block page-lead %}
+Это страничка проекта про изучение слов китайского языка.
+{% endblock %}
+
+{% block content %}
+<div class="container px-4 py-5" id="project-contents">
+    <h2 class="pb-2 border-bottom">Что есть в этом проекте</h2>
+    
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Случайное слово</h3>
+                <p>Изучить случайно выбранное слово из словаря</p>
+                <a href="/random" class="btn btn-primary">Посмотреть</a>
+            </div>
+        </div>
+        
+        
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Список слов</h3>
+                <p>Просмотреть свисок всех известных слов</p>
+                <a href="/terms-list" class="btn btn-primary">Посмотреть</a>
+            </div>
+        </div>
+        
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Форма для добавления слова</h3>
+                <p>Добавить новое слово в словарь</p>
+                <a href="/add-term" class="btn btn-primary">
+                    Заполнить
+                </a>
+            </div>
+        </div>
+        
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Форма для добавления примера употребления</h3>
+                <p>Отредактировать пример использования существующего слова</p>
+                <a href="/add-term-example" class="btn btn-primary">
+                    Добавить
+                </a>
+            </div>
+        </div>
+        
+        <div class="col d-flex">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href="#cpu-fill"></use>
+                </svg>
+            </div>
+            <div>
+                <h3 class="fs-2">Статистика</h3>
+                <p>Сколько слов уже есть? Какой они длины?</p>
+                <a href="/stats" class="btn btn-primary">
+                    Изучить
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
